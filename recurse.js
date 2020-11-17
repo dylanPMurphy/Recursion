@@ -57,3 +57,14 @@ function rFactorial(max){
 // gcf(a,b) == gcf(a-b,b), if a>b;
 // gcf(a,b) == gcf(a,b-a), if b>a.
 // Second: rework facts #2 and #3 to reduce stack consumption and expand rGCF’s reach. You should  be able to compute rGCF(123456,987654).
+
+function gcf(a,b){
+    if(b!=0){
+        return gcf(b, a % b);
+    }
+    else{
+        return a;
+    }
+}
+
+console.log(gcf(123456,987654));
