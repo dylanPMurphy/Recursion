@@ -46,7 +46,35 @@ function rFactorial(max){
 // rBinarySearch([1,3,5,6],4) = false; 
 
 // rBinarySearch([4,5,6,8,12],5) = true.
+function BinarySearch(array, target){
+    return rBinarySearch(array, 0, array.length-1, target)
+}
 
+function rBinarySearch(array, l, r, target){
+    if(r>=l){
+        
+        middle  = l + (r-l)/2;
+
+        if(array[middle]==target){
+            return middle;
+        }
+        if (array[middle]>target){
+            return rBinarySearch(array,l,middle-1,target);
+        }
+        return rBinarySearch(array,middle+1,r,target);
+        
+    }
+    return null;
+
+    
+}
+
+console.log(BinarySearch([2,43,56,77,645,23455,777777], 2));
+console.log(BinarySearch([2,43,56,77,645,23455,777777], 777777));
+
+console.log(BinarySearch([2,43,56,77,645,23455,777777], 78));
+console.log(BinarySearch([2,43,56,77,645,23455,777777], 645));
+console.log(BinarySearch([2,43,56,77,645,23455,777777], 56));
 
 
 // Greatest Common Factor
